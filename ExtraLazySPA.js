@@ -230,7 +230,10 @@ let ExtraLazySPA = function($) {
      * @private
      */
     let _bustCache = function() {
-
+        localStorage.setItem('extra_lazy_spa_links','{}');
+        localStorage.setItem('extra_lazy_spa_content','{}');
+        links = [];
+        content = [];
     };
 
     /**
