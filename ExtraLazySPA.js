@@ -157,7 +157,7 @@ let ExtraLazySPA = function($) {
      */
     let _isLinkAlreadyLoaded = function(link) {
         _getSharedLinks();
-        if(links === null)
+        if(links !== null)
             for(let i = 0; i < links.length; i++) {
                 if(links[i].pathname === link.pathname) {
                     return true;
