@@ -109,15 +109,15 @@ let ExtraLazySPA = function($) {
 
         };
 
-        // make request
-        xhttp.open("GET", url, true);
-
-        try {
-            xhttp.send();
-        } catch (error) {
-            console.log(error);
+        if(url !== 'undefined') {
+            // make request
+            xhttp.open("GET", url, true);
+            try {
+                xhttp.send();
+            } catch (error) {
+                console.log(error);
+            }
         }
-
     };
 
     /**
