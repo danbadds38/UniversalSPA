@@ -118,10 +118,6 @@ let ExtraLazySPA = function($) {
                 console.log(error);
             }
         }
-
-
-
-
     };
 
     /**
