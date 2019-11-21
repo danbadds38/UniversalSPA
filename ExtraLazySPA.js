@@ -29,7 +29,7 @@
 let ExtraLazySPA = function($) {
     'use strict';
 
-    var links = [], content;
+    let links = [], content;
 
     /**
      * This will store the shared resource links between Tabs
@@ -109,14 +109,18 @@ let ExtraLazySPA = function($) {
 
         };
 
-        // make request
-        xhttp.open("GET", url, true);
-
-        try {
-            xhttp.send();
-        } catch (error) {
-            console.log(error);
+        if(url !== 'undefined' && url !== "" && url !== "javascript:;") {
+            // make request
+            xhttp.open("GET", url, true);
+            try {
+                xhttp.send();
+            } catch (error) {
+                console.log(error);
+            }
         }
+
+
+
 
     };
 
@@ -157,7 +161,7 @@ let ExtraLazySPA = function($) {
      */
     let _isLinkAlreadyLoaded = function(link) {
         _getSharedLinks();
-        if(links === null)
+        if(links !== null)
             for(let i = 0; i < links.length; i++) {
                 if(links[i].pathname === link.pathname) {
                     return true;
@@ -230,7 +234,10 @@ let ExtraLazySPA = function($) {
      * @private
      */
     let _bustCache = function() {
-
+        localStorage.setItem('extra_lazy_spa_links','{}');
+        localStorage.setItem('extra_lazy_spa_content','{}');
+        links = [];
+        content = [];
     };
 
     /**
