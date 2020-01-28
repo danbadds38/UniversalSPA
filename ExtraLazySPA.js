@@ -107,7 +107,7 @@ let ExtraLazySPA = function($) {
                 console.log(error);
             }
 
-        };
+        }
 
         if(url !== 'undefined' && url !== "" && url !== "javascript:;") {
             // make request
